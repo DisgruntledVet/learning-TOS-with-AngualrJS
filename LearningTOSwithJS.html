@@ -1,0 +1,33 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Select a network:</p>
+
+<select ng-model="selectednetwork" ng-options="y.network for (x, y) in network">
+</select>
+
+<h1>Network: {{selectednetwork.network}}</h1>
+<h2>Report Form: {{selectednetwork.form}}</h2>
+<h3>TOS: {{selectednetwork.tos}}</h3>
+
+
+
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.network = {
+        network01 : {network : "Twitter", form : "https://help.twitter.com/forms/impersonation", tos : "https://help.twitter.com/en/rules-and-policies/twitter-report-violation?lang=browser"},
+        network02 : {network : "Facebook", form : "https://www.facebook.com/help/contact/634636770043106?helpref=page_content", tos : "https://www.facebook.com/help/263149623790594"},
+        network03 : {network : "Instagram", form : "https://help.instagram.com/contact/230197320740525", tos : "https://help.instagram.com/581066165581870"}
+    }
+});
+</script>
+
+</body>
+</html>
